@@ -7,13 +7,23 @@ struct key{
     vector<char> alphabet;
     int alphabetSize, keySize=1, mark;
     key(){
-        for(int i=0; i<26; i++)
-            alphabet.push_back(i+'a');
+        for(int i=32; i<=126; i++)
+            alphabet.push_back((char)i);
+        mark=alphabetSize=26;
+        curr=0;
+    }
+    key(int s, int e){
+        //For all Characters 32-126
+        //For Uppercase only 65-90
+        //For Lowercase only 97-122
+        //For Nummeric only 48-57
+        for(int i=s; i<=e; i++)
+            alphabet.push_back((char)i);
         mark=alphabetSize=26;
         curr=0;
     }
     key(string alphabet){
-        for(int i=0; i<alphabet.size(); i++)
+        for(size_t i=0; i<alphabet.size(); i++)
             (this->alphabet).push_back(alphabet[i]);
         mark=alphabetSize=alphabet.size();
         curr=0;
