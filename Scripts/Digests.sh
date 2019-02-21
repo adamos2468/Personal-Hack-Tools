@@ -1,5 +1,6 @@
+#$1 -> input file
 #openssl dgst <hashing algorithm> <file>
 #From File
-openssl dgst -sha256 input.txt
+openssl dgst -sha256 $1
 #From Keyboard
-echo -n "input" | openssl dgst -sha256
+#echo -n "input" | openssl dgst -sha256
